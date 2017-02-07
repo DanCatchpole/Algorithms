@@ -30,7 +30,7 @@ public class IntervalScheduling {
         return optimalJobs;
     }
 
-    public static void test() {
+    public static boolean test() {
         List<Tuple<Integer,Integer>> lst = new ArrayList<>();
         // Add some 'random' tuples to test algorithm
         lst.add(new Tuple<>(8, 10));
@@ -45,8 +45,22 @@ public class IntervalScheduling {
 
         List<Tuple<Integer, Integer>> optimals = IntervalScheduling.schedule(lst);
         // Should output {1, 2}, {3, 6}, {8, 10}, {15, 16}
-        for(Tuple<Integer, Integer> current : optimals) {
-            System.out.println(current.toString());
+
+        String[] actual = new String[]{"{1, 2}", "{3, 6}", "{8, 10}", "{15, 16}"};
+
+        if (optimals.size() == 4) {
+            for (int i = 0; i < 4; i++) {
+                if (!actual[i].equals(optimals.get(i).toString())){
+//                    System.out.println("Actual: " + actual[i] + ", optimals: " + optimals.get(i));
+                    return false;
+                }
+            }
+
+            return true;
+
+
+        } else {
+            return false;
         }
 
     }

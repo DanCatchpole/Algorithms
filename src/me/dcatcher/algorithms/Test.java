@@ -3,7 +3,7 @@ package me.dcatcher.algorithms;
 public class Test {
 
     public static void main(String[] args) {
-        IntervalScheduling.test();
-        IntervalPartitioning.test();
+        System.out.println("Interval Scheduling: " + IntervalScheduling.test());
+        System.out.println("Interval Partitioning: " + IntervalPartitioning.test());
     }
 }

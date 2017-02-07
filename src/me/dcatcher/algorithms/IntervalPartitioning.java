@@ -37,7 +37,7 @@ public class IntervalPartitioning {
         return rooms.size();
     }
 
-    public static void test() {
+    public static boolean test() {
         List<Tuple<Integer, Integer>> events = new ArrayList<>();
         events.add(new Tuple<>(5, 8)); // 'd'
         events.add(new Tuple<>(1, 8)); // 'b'
@@ -51,6 +51,6 @@ public class IntervalPartitioning {
         events.add(new Tuple<>(5, 11)); // 'e'
 
         // Should return True
-        System.out.println(3 == IntervalPartitioning.minimumRequired(events));
+        return (3 == IntervalPartitioning.minimumRequired(events));
     }
 }
