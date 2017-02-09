@@ -8,6 +8,8 @@ Given a set of Tuples to represent the time in which a job can be completed, thi
 
 This algorithm takes O(n log(n)) time, due to the sorting section, which takes O(n log(n)) time. The following loop takes O(n) time, in order to iterate over all of the jobs in the sorted list, and compare them to the end time of the current latest job. The sorting is asymptopically harder than the comparisons, so there is nothing in the algorithm that impacts the time complexity.
 
+[Link to Wikipedia description of the problem](https://en.wikipedia.org/wiki/Interval_scheduling)
+
 ## Interval Partitioning
 Similar to the Interval Scheduling algorithm, instead this will schedule all Tuples (Jobs) given to it, in as little "rooms" or venues as possible. The venues themselves have no limit to how many jobs can be scheduled within them. First it orders the jobs by start time, then checks to see if the next job is compatible with one of the rooms we have already. If not, we create a new room and add the job, otherwise we can add it to the first room we have that accepts it. The algorithm then returns the 'depth' which is the amount of rooms that need to be used in order to schedule all events.
 
